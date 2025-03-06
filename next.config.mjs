@@ -1,4 +1,7 @@
 import { withPlausibleProxy } from "next-plausible";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+initOpenNextCloudflareForDev();
 
 process.env.SITE_URL = process.env.SITE_URL || process.env.VERCEL_URL || "http://localhost:3000";
 
@@ -23,9 +26,9 @@ let nextConfig = {
 		},
 	},
 	experimental: {
-		typedRoutes: true,
+		// typedRoutes: true,
 		mdxRs: true,
-		ppr: true,
+		// ppr: "incremental",
 	},
 	devIndicators: {
 		buildActivity: false,
